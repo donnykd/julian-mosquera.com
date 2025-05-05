@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@fontsource/alegreya-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^6.0.0
@@ -206,6 +210,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/alegreya-sans@5.2.5':
+    resolution: {integrity: sha512-gYr8J2ExytMwkYWjfN4M+HcPb2g0vDY4MEbHLRHLjmdaDnbJpo4RmTq0NjKpLIirshvE9DrpWjw6PcVx6Q5hlw==}
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -934,6 +941,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.3':
     optional: true
+
+  '@fontsource/alegreya-sans@5.2.5': {}
 
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
