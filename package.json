@@ -35,6 +35,8 @@
 		]
 	},
 	"dependencies": {
-		"@fontsource/alegreya-sans": "^5.2.5"
+		"@fontsource/alegreya-sans": "^5.2.5",
+		"@lucide/svelte": "^0.507.0",
+		"lucide-svelte": "^0.507.0"
 	}
 }

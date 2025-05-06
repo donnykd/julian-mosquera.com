@@ -1,7 +1,9 @@
 <script>
-    import logo1 from '$lib/assets/jul (1).png'
-    import logo2 from '$lib/assets/jul (2).png'
-    let currentLogo = $state(logo1)
+    import logo1 from '$lib/assets/jul (1).png';
+    import logo2 from '$lib/assets/jul (2).png';
+    import { Instagram, Mail } from '@lucide/svelte';
+    let currentLogo = $state(logo1);
+    const email = "blabla@bla.com"
 </script>
 
 <nav class="w-80 bg-white text-gray-500 p-8 flex flex-col">
@@ -24,7 +26,11 @@
         </ul>
     </div>
 
-    <div class="font-[Alegraya Sans] font-light lowercase tracking-wider text-center mt-auto">
-        <p>©2025 julian mosquera</p>
+    <div class="font-[Alegraya Sans] font-light lowercase tracking-wider text-center mt-auto mr-8">
+        <p class="mb-3">©2025 julianmosquera</p>
+        <div class="flex justify-center space-x-5">
+            <a href="https://www.instagram.com/miramiramemories/"><Instagram class="w-5 h-6"/></a>
+            <a href={`mailto:$(email)`}><Mail class="w-5 h-6"/></a>
+        </div>
     </div>
 </nav>
