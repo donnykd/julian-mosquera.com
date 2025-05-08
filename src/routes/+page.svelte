@@ -11,33 +11,15 @@
     const verticalImages = [img2, img4, img6]
     const horizontalImages = [img1, img3, img5]
 
-    // Pair of horizontal and vertical photos
-    let currentPair = $state({
-        horizontal: horizontalImages[0],
-        vertical: verticalImages [0]
-    })
+    let currentImage = $state(0)
 
-
-    function getRandomImages(){
-        var newHorizontal, newVertical
-        do{
-            newHorizontal = horizontalImages[Math.floor(Math.random() * horizontalImages.length)]
-            newVertical = verticalImages[Math.floor(Math.random() * verticalImages.length)]
-        } while (
-            newHorizontal === currentPair.horizontal && newVertical === currentPair.vertical
-        )
-        return { horizontal: newHorizontal, vertical: newVertical }
-    }
-
-    /*function nextImage(){
+    function nextImage(){
         currentImage = (currentImage + 1) % Math.min(verticalImages.length, horizontalImages.length)
-    }*/
+    }
 
     // 4 seconds interval
     onMount(() => {
-        const interval = setInterval(() => {
-            currentPair = getRandomImages()
-        }, 4000)
+        const interval = setInterval(nextImage, 4000)
 
         return () => clearInterval(interval)
     })
@@ -47,16 +29,16 @@
 
 <div class="flex justify-center items-center w-full min-h-screen p-4">
     <div class="flex items-center justify-center gap-16 w-6xl">
-        {#key currentPair}
+        {#key currentImage}
         <div in:fade class="max-w-[60%] pr-8">
             <enhanced:img 
-            src={currentPair.horizontal} 
+            src={horizontalImages[currentImage]} 
             alt="landscape shot" />
         </div>
 
         <div in:fade class="max-w-[40%] pl-8">
             <enhanced:img 
-            src={currentPair.vertical} 
+            src={verticalImages[currentImage]} 
             alt="portrait shot" />
         </div>
         {/key}
