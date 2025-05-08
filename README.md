@@ -1,3 +1,9 @@
+# Notes
+
+pnpm add @fontsource/alegreya-sans
+pnpm add @lucide/svelte
+pnpm add @sveltejs/enhanced-img
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
