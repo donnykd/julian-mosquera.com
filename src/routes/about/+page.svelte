@@ -9,5 +9,7 @@
     <p>
         Born in New York — Based in Tokyo — Child of Concrete Jungles
     </p>
-    <enhanced:img src={nira} alt="Nira Dance" />
+    <enhanced:img 
+    src={nira} 
+    alt="Nira Dance" />
 </div>
