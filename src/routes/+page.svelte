@@ -27,7 +27,7 @@
 </script>
 
 
-<div class="flex justify-center items-center w-full min-h-screen p-4">
+<div in:fade class="flex justify-center items-center w-full min-h-screen p-4">
     <div class="flex items-center justify-center gap-16 w-6xl">
         {#key currentImage}
         <div in:fade class="max-w-[60%] pr-8">
