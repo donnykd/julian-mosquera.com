@@ -7,7 +7,7 @@
 <div in:fade class="flex flex-col justify-center items-center w-full min-h-screen
             font-[Alegraya Sans] font-mono lowercase tracking-wider text-center text-gray-700">
     <p>
-        Born in New York — Based in Tokyo — Child of Concrete Jungles
+        Born in New York — Based in Tokyo — Concrete Child
     </p>
     <enhanced:img 
     src={nira} 
