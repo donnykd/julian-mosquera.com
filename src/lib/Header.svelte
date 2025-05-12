@@ -6,7 +6,7 @@
     const email = "Juliantmosquera@gmail.com"
 </script>
 
-<nav class="w-80 bg-white text-gray-500 p-8 flex flex-col">
+<nav class="fixed w-80 h-screen bg-white text-gray-500 p-8 flex flex-col">
     <div class="flex flex-col justify-center items-center flex-grow space-y-10">
         <div>
             <a href="/">
