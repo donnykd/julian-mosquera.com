@@ -39,6 +39,7 @@
 		"@fontsource/alegreya-sans": "^5.2.5",
 		"@lucide/svelte": "^0.507.0",
 		"@sveltejs/enhanced-img": "^0.5.0",
+		"cloudinary": "^2.6.1",
 		"googleapis": "^148.0.0",
 		"julian-mosquera": "file:",
 		"lucide-svelte": "^0.507.0",
