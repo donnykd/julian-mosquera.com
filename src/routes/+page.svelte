@@ -17,9 +17,9 @@
         currentImage = (currentImage + 1) % Math.min(verticalImages.length, horizontalImages.length)
     }
 
-    // 4 seconds interval
+    // 8 seconds interval
     onMount(() => {
-        const interval = setInterval(nextImage, 4000)
+        const interval = setInterval(nextImage, 8000)
 
         return () => clearInterval(interval)
     })

@@ -2,6 +2,7 @@
     import logo1 from '$lib/assets/jul (1).png';
     import logo2 from '$lib/assets/jul (2).png';
     import { Instagram, Mail } from '@lucide/svelte';
+
     let currentLogo = $state(logo1);
     const email = "Juliantmosquera@gmail.com"
 </script>

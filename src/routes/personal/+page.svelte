@@ -1,8 +1,11 @@
 <script>
     import { fade } from 'svelte/transition'
+    import { onMount } from 'svelte';
     export let data
 
-
+    //function to check if image dimension is 1.5
+        //if it is then set the image width to 60%
+        //else set the image width to 40%
     
 </script>
 
@@ -12,7 +15,7 @@
                 <img 
                 src={image.url}
                 alt="test" 
-                class="w-50"    
+                class="w-[60%]"    
                 />
         {/each}
     </div>
