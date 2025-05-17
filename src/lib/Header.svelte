@@ -43,7 +43,7 @@
 {#if isMenuOpen}
     <div 
     in:fade={{ duration: 100 }}  
-    class="md:hidden fixed inset-0 flex flex-col p-8 bg-white/50 backdrop-blur z-20">
+    class="md:hidden fixed inset-0 flex flex-col p-8 bg-gray-300/50 backdrop-blur z-20">
 
         <ul 
         class="font-[Alegraya Sans] font-light lowercase tracking-widest space-y-6 text-center text-3xl text-gray-700 w-full">

@@ -28,15 +28,15 @@
 
 
 <div in:fade class="flex justify-center items-center w-full min-h-screen p-4">
-    <div class="flex items-center justify-center gap-16 w-6xl">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 w-6xl">
         {#key currentImage}
-        <div in:fade class="max-w-[60%] pr-8">
+        <div in:fade class="max-w-[70%] md:max-w-[60%] md:pr-8">
             <enhanced:img 
             src={horizontalImages[currentImage]} 
             alt="landscape shot" />
         </div>
 
-        <div in:fade class="max-w-[40%] pl-8">
+        <div in:fade class="max-w-[50%] md:max-w-[40%] md:pl-8">
             <enhanced:img 
             src={verticalImages[currentImage]} 
             alt="portrait shot" />
