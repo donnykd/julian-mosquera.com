@@ -33,13 +33,25 @@
         <div in:fade class="max-w-[70%] md:max-w-[60%] md:pr-8">
             <enhanced:img 
             src={horizontalImages[currentImage]} 
-            alt="landscape shot" />
+            alt="landscape shot" 
+            class="opacity-0" 
+            onload={(e) => {
+                const image = e.currentTarget
+                image.classList.remove('opacity-0')
+            }}
+            />
         </div>
 
         <div in:fade class="max-w-[50%] md:max-w-[40%] md:pl-8">
             <enhanced:img 
             src={verticalImages[currentImage]} 
-            alt="portrait shot" />
+            alt="portrait shot"
+            class="opacity-0" 
+            onload={(e) => {
+                const image = e.currentTarget
+                image.classList.remove('opacity-0')
+            }}
+            />
         </div>
         {/key}
     </div>
