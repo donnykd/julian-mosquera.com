@@ -36,14 +36,14 @@
                     <img 
                     src={image.url}
                     alt="test" 
-                    class="absolute transition-all duration-300" 
+                    class="absolute opacity-0 transition-all duration-300" 
                     onload={(e) => {
                         const image = e.currentTarget
                         const width = getWidth(image)
                         const translate = getTranslate()
                         const rotation = getRotation()
+                        image.classList.remove('opacity-0')
                         image.classList.add(width, translate.x, translate.y, rotation)
-
                     }}
                     />
                 </div>
