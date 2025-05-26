@@ -7,7 +7,7 @@
     function getWidth(image){
         const aspectRatio = image.naturalWidth / image.naturalHeight
         const wide = ['w-[90%]', 'w-[80%]', 'w-[70%]']
-        const tall = ['w-[60%]', 'w-[50%]', 'w-[40%]']
+        const tall = ['w-[70%]', 'w-[60%]', 'w-[50%]']
         const selected = aspectRatio >= 1.45 ? wide : tall;
         return selected[Math.floor(Math.random() * selected.length)]
     }
