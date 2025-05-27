@@ -36,6 +36,7 @@
                     <img 
                     src={image.url}
                     alt="test" 
+                    loading="lazy"
                     class="absolute opacity-0 transition-all duration-300" 
                     onload={(e) => {
                         const image = e.currentTarget

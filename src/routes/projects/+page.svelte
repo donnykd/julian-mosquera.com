@@ -19,6 +19,7 @@
             <img
                 src={data.images[i].url}
                 alt="project"
+                loading="lazy"
                 class="h-full w-1/2 object-cover ease-in-out transition-all"
                 class:blur-xs={hoveredIndex !== i}
                 class:opacity-90={hoveredIndex !== i}

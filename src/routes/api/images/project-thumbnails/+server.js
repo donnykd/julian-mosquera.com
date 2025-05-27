@@ -4,8 +4,8 @@ import { json } from '@sveltejs/kit'
 export async function GET() {
     try{
         const result = await cloudinary.search
-        .expression('resource_type:image AND folder:Projects/*')
-        .max_results(30)
+        .expression('resource_type:image AND folder:Projects/*') //Add cosplays to this later using OR
+        .max_results(50)
         .execute()
 
         
