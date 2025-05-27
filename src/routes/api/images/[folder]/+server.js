@@ -7,7 +7,7 @@ export async function GET({ params }) {
         const result = await cloudinary.search
         .expression(`resource_type:image AND folder:${folder}`)
         .sort_by('public_id', 'desc')
-        .max_results(30)
+        .max_results(60)
         .execute()
 
        // @ts-ignore

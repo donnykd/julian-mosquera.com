@@ -1,5 +1,5 @@
-export async function load({ fetch, params }) {
-	const res = await fetch('/api/images/Projects');
-	const images = await res.json();
-	return { images };
+export async function load({ fetch }) {
+	const res = await fetch('/api/images/project-thumbnails');
+	const data = await res.json();
+	return { images: data.images };
 }
