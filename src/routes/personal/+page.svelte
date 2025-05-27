@@ -2,7 +2,7 @@
 // @ts-nocheck
 
     import { fade } from 'svelte/transition'
-    export let data
+    let { data } = $props();
 
     function getWidth(image){
         const aspectRatio = image.naturalWidth / image.naturalHeight
