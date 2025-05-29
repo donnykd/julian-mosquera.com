@@ -9,6 +9,14 @@
 	let isMenuOpen = $state(false);
 
 	const email = 'Juliantmosquera@gmail.com';
+	
+	$effect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+    });
 </script>
 
 <div class="fixed top-0 right-0 z-50 p-4 md:hidden">

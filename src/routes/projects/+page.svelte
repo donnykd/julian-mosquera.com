@@ -10,7 +10,7 @@
     <div class="flex flex-col space-y-8 justify-center items-center w-full min-h-screen p-4 pt-15">
         {#each data.images as image, i}
         <button 
-        class="w-full max-w-6xl h-60 rounded-2xl overflow-hidden shadow-lg flex relative group"
+        class="w-full max-w-6xl h-60 rounded-2xl overflow-hidden shadow-lg flex relative group cursor-pointer"
         onmouseover={ () => hoveredIndex = i}
         onmouseout={ () => hoveredIndex = -1}
         onfocus={ () => hoveredIndex = i}

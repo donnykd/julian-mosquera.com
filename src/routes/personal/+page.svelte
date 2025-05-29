@@ -3,6 +3,7 @@
 
     import { fade } from 'svelte/transition'
     let { data } = $props();
+    let displayImage = $state(false);
 
     function getWidth(image){
         const aspectRatio = image.naturalWidth / image.naturalHeight
@@ -26,6 +27,13 @@
         return rotations[Math.floor(Math.random() * rotations.length)]
     }
 
+    $effect(() => {
+		if (displayImage) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+    });
 </script>
 
 <div in:fade class="w-full">
@@ -37,7 +45,8 @@
                     src={image.url}
                     alt="test" 
                     loading="lazy"
-                    class="absolute opacity-0 transition-all duration-300" 
+                    class="absolute opacity-0 transition-all duration-300 cursor-pointer"
+                    onclick={() => (displayImage = true)}
                     onload={(e) => {
                         const image = e.currentTarget
                         const width = getWidth(image)
@@ -52,3 +61,11 @@
         {/each}
     </div>
 </div>
+
+{#if displayImage}
+    <div
+        in:fade={{ duration: 100 }}
+        class="fixed inset-0 z-20 flex flex-col bg-gray-300/50 p-8 backdrop-blur"
+    >
+    </div>
+{/if}
