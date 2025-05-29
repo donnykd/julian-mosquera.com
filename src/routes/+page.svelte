@@ -18,7 +18,7 @@
     }
 
     // 8 seconds interval
-    onMount(() => {
+    $effect(() => {
         const interval = setInterval(nextImage, 8000)
 
         return () => clearInterval(interval)
