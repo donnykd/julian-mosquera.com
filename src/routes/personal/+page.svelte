@@ -2,6 +2,9 @@
 // @ts-nocheck
 
     import { fade } from 'svelte/transition'
+    import { X } from '@lucide/svelte'
+    import { receive } from '$lib/transition.js';
+    
     let { data } = $props();
     let displayImage = $state(false);
 
@@ -65,7 +68,20 @@
 {#if displayImage}
     <div
         in:fade={{ duration: 100 }}
-        class="fixed inset-0 z-20 flex flex-col bg-gray-300/50 p-8 backdrop-blur"
-    >
+        class="fixed inset-0 z-20 flex flex-col bg-gray-300/50 p-8 backdrop-blur">
+        <div class="fixed top-0 right-0 z-50 p-4">
+            <div class="relative h-9 w-9">
+                <div in:receive={{ key: 'menu-icon' }}>
+                    <X
+    					data-icon="X"
+    					onclick={() => (displayImage = false)}
+    					color="#616161"
+    					size={36}
+    					strokeWidth={1}
+    					style="cursor: pointer"
+					/>
+                </div>
+            </div>
+        </div>
     </div>
 {/if}
