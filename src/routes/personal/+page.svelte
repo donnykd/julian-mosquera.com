@@ -6,7 +6,7 @@
     import { receive } from '$lib/transition.js';
     
     let { data } = $props();
-    let displayImage = $state(false);
+    let displayImage = $state(null);
 
     function getWidth(image){
         const aspectRatio = image.naturalWidth / image.naturalHeight
@@ -31,7 +31,7 @@
     }
 
     $effect(() => {
-		if (displayImage) {
+		if (displayImage != null) {
 			document.body.style.overflow = 'hidden';
 		} else {
 			document.body.style.overflow = '';
@@ -49,7 +49,7 @@
                     alt="test" 
                     loading="lazy"
                     class="absolute opacity-0 transition-all duration-300 cursor-pointer"
-                    onclick={() => (displayImage = true)}
+                    onclick={() => (displayImage = image)}
                     onload={(e) => {
                         const image = e.currentTarget
                         const width = getWidth(image)
@@ -65,16 +65,16 @@
     </div>
 </div>
 
-{#if displayImage}
+{#if displayImage != null}
     <div
-        in:fade={{ duration: 100 }}
-        class="fixed inset-0 z-20 flex flex-col bg-gray-300/50 p-8 backdrop-blur">
+    	in:fade={{ duration: 100 }}
+    	class="fixed inset-0 z-20 flex items-center justify-center bg-gray-300/50 p-8 backdrop-blur">
         <div class="fixed top-0 right-0 z-50 p-4">
             <div class="relative h-9 w-9">
                 <div in:receive={{ key: 'menu-icon' }}>
                     <X
     					data-icon="X"
-    					onclick={() => (displayImage = false)}
+    					onclick={() => (displayImage = null)}
     					color="#616161"
     					size={36}
     					strokeWidth={1}
@@ -83,5 +83,10 @@
                 </div>
             </div>
         </div>
+        <img
+            src={displayImage.url}
+            alt="Displayed Image"
+            class="max-w-[90vw] max-h-[80vh] object-contain"
+        />
     </div>
 {/if}
