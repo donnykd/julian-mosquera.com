@@ -46,7 +46,7 @@
                 <div class="absolute inset-0 flex items-center justify-center">
                     <img 
                     src={image.url}
-                    alt="test" 
+                    alt="" 
                     loading="lazy"
                     class="absolute opacity-0 transition-all duration-300 cursor-pointer"
                     onclick={() => (displayImage = image)}
@@ -85,7 +85,7 @@
         </div>
         <img
             src={displayImage.url}
-            alt="Displayed Image"
+            alt=""
             class="max-w-[90vw] max-h-[80vh] object-contain"
         />
     </div>

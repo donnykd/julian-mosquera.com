@@ -5,6 +5,7 @@ export async function GET() {
     try{
         const result = await cloudinary.search
         .expression('resource_type:image AND folder:Projects/*') //Add cosplays to this later using OR
+        .with_field('context')
         .max_results(50)
         .execute()
 
@@ -15,10 +16,17 @@ export async function GET() {
        for (const image of result.resources){
          const folder = image.folder;
          const isHorizontal = image.width / image.height > 1.45;
+         const [, projectName] = image.asset_folder.split("/");
+         const date = image.context.Date;
+         
          if(!seenFolders.has(folder) && isHorizontal){
+           
            thumbnails.push({
              url: image.secure_url,
-             id: image.public_id, folder
+             id: image.public_id, 
+             folder,
+             project: projectName,
+             date
            });
            seenFolders.add(folder);
          }

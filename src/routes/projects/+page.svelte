@@ -24,6 +24,13 @@
                 class:blur-xs={hoveredIndex !== i}
                 class:opacity-90={hoveredIndex !== i}
             />
+            
+            <div class="flex flex-col justify-center items-center space-y-10 p-4 w-1/2
+                        font-[Alegraya Sans] font-mono lowercase tracking-wider text-center text-gray-700">
+          		<h2 class="text-xl font-semibold">{image.project}</h2>
+          		<p class="text-gray-600">{image.date}</p>
+           	</div>
+            
             {#if hoveredIndex === i}
 				<div class="absolute top-1/2 right-4 -z-10">
 					<ChevronRight class="text-gray-800 w-6 h-6" />
