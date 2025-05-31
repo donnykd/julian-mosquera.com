@@ -1,4 +1,5 @@
 <script>
+// @ts-nocheck
 	import { fade } from 'svelte/transition';
 	import { ChevronRight } from 'lucide-svelte';
 	import { goto } from '$app/navigation';
@@ -6,6 +7,10 @@
 	let { data } = $props();
 	
 	let hoveredIndex = $state(-1);
+	
+	function formatProjectName(name){
+	  return name.split('_').join(' ')
+	}
 </script>
 
 <div in:fade class="w-full">
@@ -30,7 +35,7 @@
             
             <div class="flex flex-col justify-center items-center space-y-10 p-4 w-1/2
                         font-[Alegraya Sans] font-mono lowercase tracking-wider text-center text-gray-700">
-          		<h2 class="text-xl font-semibold">{image.project}</h2>
+          		<h2 class="text-xl font-semibold">{formatProjectName(image.project)}</h2>
           		<p class="text-gray-600">{image.date}</p>
            	</div>
             
