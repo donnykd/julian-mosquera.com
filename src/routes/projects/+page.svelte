@@ -1,6 +1,8 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { ChevronRight } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
+	
 	let { data } = $props();
 	
 	let hoveredIndex = $state(-1);
@@ -11,6 +13,7 @@
         {#each data.images as image, i}
         <button 
         class="w-full max-w-6xl h-60 rounded-2xl overflow-hidden shadow-lg flex relative group cursor-pointer"
+        onclick={() => goto(`/projects/${image.project}`)}
         onmouseover={ () => hoveredIndex = i}
         onmouseout={ () => hoveredIndex = -1}
         onfocus={ () => hoveredIndex = i}

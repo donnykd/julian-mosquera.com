@@ -3,12 +3,28 @@ import { json } from '@sveltejs/kit'
 
 export async function GET({ params }) {
   const folder = params.folder;
+  
+  // @ts-ignore
+  async function fetchImages(path){
+    const result = await cloudinary.search
+    .expression(`resource_type:image AND folder:${path}`)
+    .sort_by('public_id', 'desc')
+    .max_results(60)
+    .execute()
+    
+    return result
+  }
+  
     try{
-        const result = await cloudinary.search
-        .expression(`resource_type:image AND folder:${folder}`)
-        .sort_by('public_id', 'desc')
-        .max_results(60)
-        .execute()
+      
+      let result;
+      
+        if(folder === 'Personal'){
+          result = await fetchImages(folder);
+        }
+        else{
+         	result = await fetchImages(`Projects/${folder}`)
+    		}
 
        // @ts-ignore
        const images = result.resources.map((img) => ({
