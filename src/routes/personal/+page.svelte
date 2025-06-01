@@ -44,21 +44,24 @@
         {#each data.images as image}
             <div class="relative aspect-[3/4] overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <img 
-                    src={image.url}
-                    alt="" 
-                    loading="lazy"
-                    class="absolute opacity-0 transition-all duration-300 cursor-pointer"
-                    onclick={() => (displayImage = image)}
-                    onload={(e) => {
-                        const image = e.currentTarget
-                        const width = getWidth(image)
-                        const translate = getTranslate()
-                        const rotation = getRotation()
-                        image.classList.remove('opacity-0')
-                        image.classList.add(width, translate.x, translate.y, rotation)
-                    }}
-                    />
+                    <button 
+                        onclick={() => (displayImage = image)}
+                    >
+                        <img 
+                        src={image.url}
+                        alt="" 
+                        loading="lazy"
+                        class="absolute opacity-0 transition-all duration-300 cursor-pointer"
+                        onload={(e) => {
+                            const image = e.currentTarget
+                            const width = getWidth(image)
+                            const translate = getTranslate()
+                            const rotation = getRotation()
+                            image.classList.remove('opacity-0')
+                            image.classList.add(width, translate.x, translate.y, rotation)
+                        }}
+                        />
+                    </button>
                 </div>
             </div>
         {/each}
@@ -68,7 +71,7 @@
 {#if displayImage != null}
     <div
     	in:fade={{ duration: 100 }}
-    	class="fixed inset-0 z-20 flex items-center justify-center bg-gray-300/50 p-8 backdrop-blur">
+    	class="fixed inset-0 z-50 flex items-center justify-center bg-gray-300/50 p-8 backdrop-blur">
         <div class="fixed top-0 right-0 z-50 p-4">
             <div class="relative h-9 w-9">
                 <div in:receive={{ key: 'menu-icon' }}>
