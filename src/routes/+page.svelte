@@ -34,7 +34,8 @@
             <enhanced:img 
             src={horizontalImages[currentImage]} 
             alt="landscape shot" 
-            class="opacity-0" 
+            loading="lazy"
+            class="opacity-0 transition-all duration-300" 
             onload={(e) => {
                 const image = e.currentTarget
                 image.classList.remove('opacity-0')
