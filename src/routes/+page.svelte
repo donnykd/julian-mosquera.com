@@ -1,15 +1,19 @@
 <script>
     import { fade } from 'svelte/transition'
     import { onMount } from 'svelte';
-    import img1 from '$lib/assets/gallery/DSCF0341_3.jpg?enhanced'
-    import img2 from '$lib/assets/gallery/DSCF4090.jpg?enhanced'
-    import img3 from '$lib/assets/gallery/DSCF3527 2.jpg?enhanced'
-    import img4 from '$lib/assets/gallery/DSCF4021.jpg?enhanced'
-    import img5 from '$lib/assets/gallery/DSCF0358 3.jpg?enhanced'
-    import img6 from '$lib/assets/gallery/DSCF4107.jpg?enhanced'
+    import img1 from '$lib/assets/gallery/IMG_0771.jpg?enhanced'
+    import img2 from '$lib/assets/gallery/IMG_1897.jpg?enhanced'
+    import img3 from '$lib/assets/gallery/08490024.jpg?enhanced'
+    import img4 from '$lib/assets/gallery/000042890006.jpg?enhanced'
+    import img5 from '$lib/assets/gallery/DSCF5240.jpg?enhanced'
+    import img6 from '$lib/assets/gallery/IMG_1876.jpg?enhanced'
+    import img7 from '$lib/assets/gallery/IMG_9406.png?enhanced'
+    import img8 from '$lib/assets/gallery/IMG_3243.jpg?enhanced'
+    import img9 from '$lib/assets/gallery/1809_023.jpg?enhanced'
+    import img10 from '$lib/assets/gallery/IMG_1908.jpg?enhanced'
 
-    const verticalImages = [img2, img4, img6]
-    const horizontalImages = [img1, img3, img5]
+    const horizontalImages = [img1, img3, img5, img7, img9]
+    const verticalImages = [img2, img4, img6, img8, img10]
 
     let currentImage = $state(0)
 
@@ -17,9 +21,9 @@
         currentImage = (currentImage + 1) % Math.min(verticalImages.length, horizontalImages.length)
     }
 
-    // 8 seconds interval
+    // 7 seconds interval
     $effect(() => {
-        const interval = setInterval(nextImage, 8000)
+        const interval = setInterval(nextImage, 7000)
 
         return () => clearInterval(interval)
     })
