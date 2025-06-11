@@ -12,7 +12,7 @@
         const aspectRatio = image.naturalWidth / image.naturalHeight
         const wide = ['w-[90%]', 'w-[80%]', 'w-[70%]']
         const tall = ['w-[70%]', 'w-[60%]', 'w-[50%]']
-        const selected = aspectRatio >= 1.45 ? wide : tall;
+        const selected = aspectRatio >= 1.20 ? wide : tall;
         return selected[Math.floor(Math.random() * selected.length)]
     }
 
@@ -40,7 +40,7 @@
 </script>
 
 <div in:fade class="w-full">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
         {#each data.images as image}
             <div class="relative aspect-[3/4] overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center">
