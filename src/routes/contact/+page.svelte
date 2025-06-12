@@ -1,13 +1,15 @@
 <script>
-    import { fade } from 'svelte/transition';
-    const email = "Juliantmosquera@gmail.com"
+	import { fade } from 'svelte/transition';
+	const email = 'Juliantmosquera@gmail.com';
 </script>
 
-<div in:fade class="flex flex-col justify-center items-center w-full min-h-screen
-            font-[Alegraya Sans] font-mono lowercase tracking-wider text-center text-gray-700">
-    
-    <p>
-        Email: 
-        <a class="hover:underline transition" href={"mailto:" + email}>{email}</a>
-    </p>
+<div
+	in:fade
+	class="font-[Alegraya Sans] flex min-h-screen w-full flex-col
+            items-center justify-center text-center font-mono tracking-wider text-gray-700 lowercase"
+>
+	<p>
+		Email:
+		<a class="transition hover:underline" href={'mailto:' + email}>{email}</a>
+	</p>
 </div>
