@@ -29,7 +29,7 @@
 	});
 </script>
 
-<div in:fade class="flex min-h-screen w-full items-center justify-center p-4">
+<div in:fade class="flex min-h-screen w-full items-center justify-center">
 	<div class="flex w-6xl flex-col items-center justify-center gap-8 md:flex-row">
 		{#key currentImage}
 			<div in:fade class="max-w-[70%] md:max-w-[60%] md:pr-8">
