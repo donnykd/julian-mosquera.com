@@ -8,7 +8,7 @@ The package manager for this project is ```pnpm```. Install this to download all
 
 # Environment Setup
 
-Keep in mind this is a project that is created for a friend, so a lot of the images are saved in a cloud service, in my case cloudinary.
+Keep in mind this is a project that is created for a friend, so a lot of the images are saved in a cloud service, in my case Cloudinary.
 
 This project requires Cloudinary credentials to function properly. Create a `.env` file in the root directory with the following variables:
 
