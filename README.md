@@ -1,6 +1,6 @@
 # julian-mosquera.com
 
-This repo is the working source code for the photography portfolio made for a good friend.
+This repo is the working source code for the photography portfolio julian-mosquera.com
 
 # Prerequisites 
 
